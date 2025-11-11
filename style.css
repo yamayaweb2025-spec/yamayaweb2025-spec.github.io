@@ -1,0 +1,420 @@
+﻿/* 基本CSS */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+    /* ルートを 16px に固定（rem の基準） */
+    font-size: 16px;
+}
+
+/* 明示的に body の基本フォントサイズを固定（ブラウザのズーム差や別ルールの影響を避けるため） */
+body {
+    font-size: 1rem; /* 16px と等価 */
+}
+ul {
+	list-style: none;
+}
+a {
+	font-weight: 600;
+	margin:0 15px;
+}
+a:hover {
+	color: #369078;
+}
+.btn {
+	display: inline-block;
+	background-color: #dfdfdf;
+	color: #000000;
+	padding: 10px 20px;
+	border-radius: 5px;
+	text-decoration: none;
+	margin-top: 20px;
+	box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	width: auto; /* 幅を自動にして横幅が伸びないようにする */
+	white-space: nowrap; /* テキスト折返しを防ぎ、ボタン幅は内容に合わせる */
+}
+
+/* header */
+header {
+	display: flex;
+	justify-content: space-between;
+	background-color: #ffffff;
+	padding-bottom: 20px;
+}
+.title .logo img{
+	width: 200px;
+	height: auto;
+	padding: 30px;
+}
+.main-nav {
+	padding: 20px 30px 20px;
+}
+.main-nav ul {
+	display: flex;
+	justify-content: right;
+	gap: 15px;
+}
+
+/* main */
+h1 {
+	text-align: center;
+	margin-bottom: 60px;
+	font-size: 4.5rem;
+	color: #006450;
+	line-height: 1.2;
+	letter-spacing: 0.05em;
+}
+
+h1 .green,
+h1 .terrace {
+	display: inline; /* PCでは横並びに表示 */
+}
+p {
+	text-align: center;
+	font-size: 1.2rem;
+	line-height: 1.8;
+	padding-bottom: 12px;
+}
+.hero-img{
+	width: 100%;
+	text-align: center;
+	}
+section {
+	padding: 60px 0;
+}
+
+/* セクション背景色 */
+#top, #about {
+	background-color: #ffffff
+}
+#recipe, #contact {
+	background-color: #f4f5f5
+}
+/* コンテナ */
+.container {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+/* ヒーローセクション */
+#top  {
+	background-image: url("images/background-cap.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 500px;
+}
+#top h2 {
+	text-align: center;
+	margin-bottom: 40px;
+	font-size: 3rem;
+	color: #99085a;
+}
+.container h2 {
+	text-align: center;
+	margin-bottom: 60px;
+	font-size: 2rem;
+	color: #010101;
+}
+/* レシピアイテム */
+.recipe-item h3{
+	font-size: 1.5rem;
+	padding: 10px 0;
+	color: #010101;
+	text-align: center;
+}
+.recipe-item img{
+	width: 100%;
+	}
+
+.recipe-item-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 30px;
+}
+.recipe-item {
+	width: 30%;
+	background-color: #ffffff;
+	padding: 15px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 15px;
+	margin-bottom: 30px;
+}
+.recipe-item p{
+	font-size: 1rem;
+	padding: 5px 0;
+	color: #010101;
+	text-align: justify;
+}
+
+/* お問い合わせフォーム */
+.contact-form th{
+	text-align: left;
+	padding: 5px 30;
+	font-size: 1rem;
+	color: #010101;
+}
+/*RecipeページのCSS*/
+/*
+#recipe-list {
+	height: calc(100vh - 60px);
+	padding: 0;
+	flex-shrink: 0;
+}
+	 レシピ一覧 */
+#recipe-list .container{
+	display: block;
+	background-color: #f4f5f5;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+#recipe-list .container h2 {
+	text-align: center;
+	margin-bottom: 60px;
+	font-size: 2rem;
+	color: #010101;
+	flex-shrink: 0;
+}
+
+#recipe-list .item-box img {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#recipe-list .recipe-item-wrap {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	gap: 30px;
+}
+#recipe-list .recipe-item {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#recipe-list .recipe-item h3 {
+    margin-bottom: 10px;
+}
+
+#recipe-list .recipe-item p {
+    /* 画像と並ぶ p の text-align: justify; を上書き */
+    text-align: center;
+    margin-top: 10px;
+	font-size: 1rem;
+	padding: 5px 0;
+	color: #010101;
+}
+
+#recipe-list .recipe-item img {
+    /* 画像は親幅に合わせて縮小、過度な拡大を防止 */
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    object-fit: contain;
+} 
+#recipe-list .item-box {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+}
+/* レシピページのボタンを横幅いっぱいにしない */
+#recipe-list .btn,
+.container > .btn {
+  display: inline-block;
+  width: auto;
+  white-space: nowrap; /* 折返しさせず内容幅に合わせる */
+  margin: 20px auto 0; /* 上に余白、左右中央寄せ（親 .container が text-align:center の場合） */
+}
+/* アバウトアイテム */
+.about-item h3{
+	font-size: 1.5rem;
+	padding: 10px 0;
+	color: #010101;
+	text-align: center;
+}
+.about-item img{
+	width: 100%;
+	}
+
+.about-item-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 30px;
+}
+.about-item {
+	width: 48%;
+	background-color: #ffffff;
+	padding: 15px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 15px;
+	margin-bottom: 30px;
+}
+/*aboutセクション*/
+.about-box-wrap {
+	display: flex;
+	align-items: flex-start;
+	gap: 30px;
+	margin-bottom: 40px;
+}
+.about-box-wrap img{
+	flex: 0 0 50%;
+	max-width: 300px;
+		height: auto;
+	border-radius: 10px;
+}
+.about-box h3{
+	text-align: center;
+	font-size: 1.5rem;
+	padding: 10px 0;
+	color: #010101;
+}
+.about-box p{
+	text-align: left;
+	font-size: 1rem;
+	line-height: 1.8;
+}
+/* contactセクション */
+#contact .container h3 {
+    margin-bottom: 20px;
+}
+.contact-item {
+	overflow: hidden;
+	margin-bottom: 20px;
+	width: 100%;
+	background-color: #f4f5f5
+	}
+.label {
+	float: left;
+	margin-right: 20px;
+	width: 135px;
+	padding-left: 10px;
+}
+.inputs {
+	float: left;
+	width: calc(100% - 155px);
+}
+input[type="submit"]{
+	text-align: center;
+	margin-top: 40px;
+	background-color: #dfdfdf;
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-size: 1rem;
+	font-weight: bold;
+	clear: both;
+	cursor: pointer;
+}
+
+	
+
+
+/* footer */
+footer {
+	background-color: #ffffff;
+	padding: 60px 0;
+	text-align: center;
+}
+.footer-nav ul {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.sns-icons ul {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.sns-icons li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.sns-icons img {
+	width: auto;
+	height: auto;
+	max-width: 50px;
+	max-height: 50px;
+}
+/* スマホCSS */
+@media screen and (max-width: 640px) {
+	/* header */
+	header {
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.title .logo img{
+		width: 150px;
+		padding: 20px 0 10px 0;
+	}
+	.main-nav ul {
+		flex-direction: column;
+		gap: 10px;
+	}
+	/* タイトルを2行に分ける */
+	h1 {
+		font-size: 3.5rem; /* モバイル表示時は少し小さく */
+	}
+	h1 .green,
+	h1 .terrace {
+		display: block; /* モバイル表示時は縦に並べる */
+	}
+	h2 {
+		font-size: 3rem; /* モバイル表示時は少し小さく */
+	}
+	/* レシピアイテム */
+	.recipe-item-wrap {
+		flex-direction: column;
+	}
+	.recipe-item {
+		width: 100%;
+	}
+	/* aboutアイテム */
+	.about-item-wrap {
+		flex-direction: column;
+	}
+	.about-item {
+		width: 100%;
+	}
+	footer {
+		flex-direction: column;
+		align-items: center;
+	}
+	.footer-nav ul {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	/* SNSアイコンをスマホ対応 */
+	.sns-icons ul {
+		gap: 15px;
+		flex-wrap: wrap;
+	}
+
+	.sns-icons img {
+		width: 40px;
+		height: 40px;
+		object-fit: contain;
+	}
+}
