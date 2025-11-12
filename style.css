@@ -417,4 +417,28 @@ footer {
 		height: 40px;
 		object-fit: contain;
 	}
+
+	/* Aboutセクションのスマホ対応 */
+	.about-box-wrap {
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+	}
+
+	.about-box-wrap img {
+		flex: none;
+		max-width: 100%;
+		width: 100%;
+		max-width: 300px;
+	}
+
+	.about-box {
+		width: 100%;
+	}
+
+	.about-box p {
+		text-align: left;
+		font-size: 0.95rem;
+		line-height: 1.6;
+	}
 }
